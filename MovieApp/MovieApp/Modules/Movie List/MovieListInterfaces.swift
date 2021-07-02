@@ -8,7 +8,7 @@
 import Foundation
 
 enum MovieListNavigationOption {
-    case movieDetail
+    case movieDetail(movieID: Int)
 }
 
 protocol MovieListWireframeInterface {
@@ -20,7 +20,7 @@ protocol MovieListViewInterface: ViewInterface {
 }
 
 protocol MovieListPresenterInterface: PresenterInterface {
-    
+    func navigate(to option: MovieListNavigationOption)
 }
 
 protocol MovieListInteractorInterface: InteractorInterface {

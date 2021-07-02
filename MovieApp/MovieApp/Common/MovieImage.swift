@@ -10,6 +10,7 @@ import UIKit
 public enum MovieIcon: String {
     case backIcon
     case logo
+    case playButton
 }
 
 final class MovieImage {
@@ -20,6 +21,8 @@ final class MovieImage {
             return UIImage(named: "backIcon")
         case .logo:
             return UIImage(named: "logo")
+        case .playButton:
+            return UIImage(named: "playButton")
         }
     }
 }

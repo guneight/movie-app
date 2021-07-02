@@ -24,5 +24,8 @@ final class MovieListPresenter {
 }
 
 extension MovieListPresenter: MovieListPresenterInterface {
+    func navigate(to option: MovieListNavigationOption) {
+        wireframe.navigation(to: option)
+    }
     
 }

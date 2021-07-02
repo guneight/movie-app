@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 final class MovieListWireframe: BaseWireframe {
     
     init(genreID: Int) {
@@ -18,16 +17,16 @@ final class MovieListWireframe: BaseWireframe {
         moduleViewController.presenter = presenter
     }
     
-    private func openMovieDetail() {
-        
+    private func openMovieDetail(movieID: Int) {
+        navigationController?.pushWireframe(MovieDetailWireframe(movieID:  movieID))
     }
 }
 
 extension MovieListWireframe: MovieListWireframeInterface {
     func navigation(to option: MovieListNavigationOption) {
         switch option {
-        case .movieDetail:
-            return openMovieDetail()
+        case .movieDetail(movieID: let movieID):
+            return openMovieDetail(movieID: movieID)
         }
     }
 }
