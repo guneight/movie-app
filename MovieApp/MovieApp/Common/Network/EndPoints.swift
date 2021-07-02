@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 struct API {
-    static let baseUrl = "http://pretest-qa.dcidev.id"
+    static let baseUrl = "https://api.themoviedb.org/3"
 }
 
 protocol Endpoint {
@@ -20,103 +20,25 @@ protocol Endpoint {
 }
 
 enum Endpoints {
-    enum Register: Endpoint {
-        case register
-        case otpMatch
-        case otpRequest
-        case remove
+    enum Movie: Endpoint {
+        case officialGenre
+        case movieList
+        case movieDetail
+        case review
+        case playTrailer
 
         public var path: String {
             switch self {
-            case .register:
-                return "/api/v1/register"
-            case .otpMatch:
-                return "/api/v1/register/otp/match"
-            case .otpRequest:
-                return "/api/v1/register/otp/request"
-            case .remove:
-                return "/api/v1/register/remove"
-            }
-        }
-
-        public var url: String {
-            return "\(API.baseUrl)\(path)"
-        }
-    }
-    
-    enum Oauth: Endpoint {
-        case signIn
-
-        public var path: String {
-            switch self {
-            case .signIn:
-                return "POST /api/v1/oauth/sign_i"
-            }
-        }
-
-        public var url: String {
-            return "\(API.baseUrl)\(path)"
-        }
-    }
-    
-    enum Profile: Endpoint {
-        case career
-        case education
-        case profile
-        case me
-
-        public var path: String {
-            switch self {
-            case .career:
-                return "/api/v1/profile/career"
-            case .education:
-                return "/api/v1/profile/education"
-            case .profile:
-                return "/api/v1/profile"
-            case .me:
-                return "/api/v1/profile/me"
-            }
-        }
-
-        public var url: String {
-            return "\(API.baseUrl)\(path)"
-        }
-    }
-    
-    enum Upload: Endpoint {
-        case cover
-        case profileDefault
-        case deleteProfile
-        case profile
-
-        public var path: String {
-            switch self {
-            case .cover:
-                return "/api/v1/uploads/cover"
-            case .profileDefault:
-                return "/api/v1/uploads/profile/default"
-            case .deleteProfile:
-                return "/api/v1/uploads/profile"
-            case .profile:
-                return "/api/v1/uploads/profile"
-            }
-        }
-
-        public var url: String {
-            return "\(API.baseUrl)\(path)"
-        }
-    }
-    
-    enum Message: Endpoint {
-        case getMessagge
-        case postMessage
-
-        public var path: String {
-            switch self {
-            case .getMessagge:
-                return "/api/v1/message/{user_id}"
-            case .postMessage:
-                return "/api/v1/message/send"
+            case .officialGenre:
+                return "/genre/movie/list"
+            case .movieList:
+                return "/discover/movie"
+            case .movieDetail:
+                return "/movie/{movie_id}"
+            case .review:
+                return "/movie/{movie_id}/reviews"
+            case .playTrailer:
+                return "/movie/{movie_id}/videos"
             }
         }
 
@@ -125,3 +47,5 @@ enum Endpoints {
         }
     }
 }
+    
+  
