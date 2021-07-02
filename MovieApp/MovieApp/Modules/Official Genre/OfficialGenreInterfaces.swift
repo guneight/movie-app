@@ -8,7 +8,7 @@
 import Foundation
 
 enum OfficialGenreNavigationOption {
-    case movieList
+    case movieList(genreID: Int)
 }
 
 protocol OfficialGenreWireframeInterface {
@@ -20,7 +20,7 @@ protocol OfficialGenreViewInterface: ViewInterface {
 }
 
 protocol OfficialGenrePresenterInterface: PresenterInterface {
-    
+    func navigate(to option: OfficialGenreNavigationOption)
 }
 
 protocol OfficialGenreInteractorInterface: InteractorInterface {

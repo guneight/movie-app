@@ -23,8 +23,17 @@
 		860B7841268EDBFB00C79A4C /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B7840268EDBFA00C79A4C /* AppConstant.swift */; };
 		860B7849268F0F2A00C79A4C /* OfficialGenre.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 860B7848268F0F2A00C79A4C /* OfficialGenre.storyboard */; };
 		8659DC6C268F1DAB008CB3F5 /* OfficialGenreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659DC6B268F1DAB008CB3F5 /* OfficialGenreViewController.swift */; };
-		8659DC71268F26CF008CB3F5 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659DC6F268F26CF008CB3F5 /* NetworkUtils.swift */; };
 		8659DC72268F26CF008CB3F5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659DC70268F26CF008CB3F5 /* NetworkManager.swift */; };
+		8659DC75268F28A3008CB3F5 /* MovieListInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659DC74268F28A3008CB3F5 /* MovieListInterfaces.swift */; };
+		8659DC78268F28B2008CB3F5 /* MovieListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659DC77268F28B2008CB3F5 /* MovieListInteractor.swift */; };
+		8659DC7B268F28C8008CB3F5 /* MovieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659DC7A268F28C8008CB3F5 /* MovieListPresenter.swift */; };
+		8659DC7E268F28D5008CB3F5 /* MovieListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659DC7D268F28D5008CB3F5 /* MovieListWireframe.swift */; };
+		8659DC82268F28EB008CB3F5 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659DC80268F28EB008CB3F5 /* MovieListViewController.swift */; };
+		8659DC83268F28EB008CB3F5 /* MovieListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8659DC81268F28EB008CB3F5 /* MovieListViewController.xib */; };
+		8659DC89268F2CA9008CB3F5 /* MovieListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659DC88268F2CA9008CB3F5 /* MovieListModel.swift */; };
+		8659DC8D268F2D57008CB3F5 /* MovieListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659DC8B268F2D57008CB3F5 /* MovieListCell.swift */; };
+		8659DC8E268F2D57008CB3F5 /* MovieListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8659DC8C268F2D57008CB3F5 /* MovieListCell.xib */; };
+		8659DC92268F3182008CB3F5 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659DC91268F3182008CB3F5 /* NetworkUtils.swift */; };
 		86C66893268DD9F500B2DEF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C66892268DD9F500B2DEF5 /* AppDelegate.swift */; };
 		86C66895268DD9F500B2DEF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C66894268DD9F500B2DEF5 /* SceneDelegate.swift */; };
 		86C66897268DD9F500B2DEF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C66896268DD9F500B2DEF5 /* ViewController.swift */; };
@@ -59,8 +68,17 @@
 		860B7840268EDBFA00C79A4C /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		860B7848268F0F2A00C79A4C /* OfficialGenre.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OfficialGenre.storyboard; sourceTree = "<group>"; };
 		8659DC6B268F1DAB008CB3F5 /* OfficialGenreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficialGenreViewController.swift; sourceTree = "<group>"; };
-		8659DC6F268F26CF008CB3F5 /* NetworkUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		8659DC70268F26CF008CB3F5 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8659DC74268F28A3008CB3F5 /* MovieListInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListInterfaces.swift; sourceTree = "<group>"; };
+		8659DC77268F28B2008CB3F5 /* MovieListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListInteractor.swift; sourceTree = "<group>"; };
+		8659DC7A268F28C8008CB3F5 /* MovieListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListPresenter.swift; sourceTree = "<group>"; };
+		8659DC7D268F28D5008CB3F5 /* MovieListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListWireframe.swift; sourceTree = "<group>"; };
+		8659DC80268F28EB008CB3F5 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		8659DC81268F28EB008CB3F5 /* MovieListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListViewController.xib; sourceTree = "<group>"; };
+		8659DC88268F2CA9008CB3F5 /* MovieListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListModel.swift; sourceTree = "<group>"; };
+		8659DC8B268F2D57008CB3F5 /* MovieListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListCell.swift; sourceTree = "<group>"; };
+		8659DC8C268F2D57008CB3F5 /* MovieListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieListCell.xib; sourceTree = "<group>"; };
+		8659DC91268F3182008CB3F5 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		86C6688F268DD9F500B2DEF5 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C66892268DD9F500B2DEF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86C66894268DD9F500B2DEF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +137,15 @@
 		860B781B268EB97D00C79A4C /* Movie List */ = {
 			isa = PBXGroup;
 			children = (
+				8659DC87268F2C87008CB3F5 /* Model */,
+				8659DC86268F2C78008CB3F5 /* Repository */,
+				8659DC85268F2C71008CB3F5 /* Cell */,
+				8659DC74268F28A3008CB3F5 /* MovieListInterfaces.swift */,
+				8659DC77268F28B2008CB3F5 /* MovieListInteractor.swift */,
+				8659DC7A268F28C8008CB3F5 /* MovieListPresenter.swift */,
+				8659DC7D268F28D5008CB3F5 /* MovieListWireframe.swift */,
+				8659DC80268F28EB008CB3F5 /* MovieListViewController.swift */,
+				8659DC81268F28EB008CB3F5 /* MovieListViewController.xib */,
 			);
 			path = "Movie List";
 			sourceTree = "<group>";
@@ -168,6 +195,30 @@
 				860B7840268EDBFA00C79A4C /* AppConstant.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		8659DC85268F2C71008CB3F5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8659DC8B268F2D57008CB3F5 /* MovieListCell.swift */,
+				8659DC8C268F2D57008CB3F5 /* MovieListCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		8659DC86268F2C78008CB3F5 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		8659DC87268F2C87008CB3F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8659DC88268F2CA9008CB3F5 /* MovieListModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		86C66886268DD9F500B2DEF5 = {
@@ -232,9 +283,9 @@
 			isa = PBXGroup;
 			children = (
 				8659DC70268F26CF008CB3F5 /* NetworkManager.swift */,
-				8659DC6F268F26CF008CB3F5 /* NetworkUtils.swift */,
 				860B7814268EB5F300C79A4C /* APIService.swift */,
 				860B7817268EB60200C79A4C /* EndPoints.swift */,
+				8659DC91268F3182008CB3F5 /* NetworkUtils.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -331,7 +382,9 @@
 			files = (
 				86C6689F268DD9F800B2DEF5 /* LaunchScreen.storyboard in Resources */,
 				860B7849268F0F2A00C79A4C /* OfficialGenre.storyboard in Resources */,
+				8659DC8E268F2D57008CB3F5 /* MovieListCell.xib in Resources */,
 				86C6689C268DD9F800B2DEF5 /* Assets.xcassets in Resources */,
+				8659DC83268F28EB008CB3F5 /* MovieListViewController.xib in Resources */,
 				860B783D268ED7B200C79A4C /* OfficialGenreCell.xib in Resources */,
 				86C6689A268DD9F500B2DEF5 /* Main.storyboard in Resources */,
 			);
@@ -397,9 +450,15 @@
 				86C668F7268E26DB00B2DEF5 /* MovieNavigationController.swift in Sources */,
 				86C668FD268E27BA00B2DEF5 /* BaseWireframe.swift in Sources */,
 				8659DC6C268F1DAB008CB3F5 /* OfficialGenreViewController.swift in Sources */,
+				8659DC8D268F2D57008CB3F5 /* MovieListCell.swift in Sources */,
+				8659DC75268F28A3008CB3F5 /* MovieListInterfaces.swift in Sources */,
 				860B7818268EB60200C79A4C /* EndPoints.swift in Sources */,
 				86C668F0268E26AB00B2DEF5 /* MovieColor.swift in Sources */,
+				8659DC7B268F28C8008CB3F5 /* MovieListPresenter.swift in Sources */,
+				8659DC82268F28EB008CB3F5 /* MovieListViewController.swift in Sources */,
+				8659DC7E268F28D5008CB3F5 /* MovieListWireframe.swift in Sources */,
 				860B7829268EBDDA00C79A4C /* OfficialGenreWireframe.swift in Sources */,
+				8659DC78268F28B2008CB3F5 /* MovieListInteractor.swift in Sources */,
 				860B781F268EBD8400C79A4C /* OfficialGenreInterfaces.swift in Sources */,
 				860B783C268ED7B200C79A4C /* OfficialGenreCell.swift in Sources */,
 				8659DC72268F26CF008CB3F5 /* NetworkManager.swift in Sources */,
@@ -408,8 +467,9 @@
 				86C668F4268E26BD00B2DEF5 /* MovieFont.swift in Sources */,
 				860B7823268EBD9A00C79A4C /* OfficialGenrePresenter.swift in Sources */,
 				860B7837268EBE5C00C79A4C /* OfficialGenreModel.swift in Sources */,
+				8659DC92268F3182008CB3F5 /* NetworkUtils.swift in Sources */,
 				86C66900268E27CC00B2DEF5 /* InteractorInterface.swift in Sources */,
-				8659DC71268F26CF008CB3F5 /* NetworkUtils.swift in Sources */,
+				8659DC89268F2CA9008CB3F5 /* MovieListModel.swift in Sources */,
 				86C66895268DD9F500B2DEF5 /* SceneDelegate.swift in Sources */,
 				86C668FA268E26E800B2DEF5 /* MovieImage.swift in Sources */,
 			);

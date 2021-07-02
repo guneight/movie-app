@@ -21,5 +21,8 @@ final class OfficialGenrePresenter {
 }
 
 extension OfficialGenrePresenter: OfficialGenrePresenterInterface {
+    func navigate(to option: OfficialGenreNavigationOption) {
+        wireframe.navigation(to: option)
+    }
     
 }

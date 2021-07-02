@@ -1,5 +1,5 @@
 //
-//  OfficialGenreViewController.swift
+//  MovieListViewController.swift
 //  MovieApp
 //
 //  Created by AlephHV2D on 02/07/21.
@@ -7,21 +7,20 @@
 
 import UIKit
 
-class OfficialGenreViewController: UIViewController {
-    var presenter: OfficialGenrePresenterInterface!
-  
+class MovieListViewController: UIViewController {
+    var presenter: MovieListPresenterInterface!
     @IBOutlet weak var collectionView: UICollectionView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         _setupCollectionView()
     }
-    
+
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        title = "GENRE"
+        title = "ACTION"
         if let navigationController = navigationController {
             navigationController.setNavigationBarHidden(false, animated: true)
             navigationController.view.backgroundColor = MovieColor.palette.primaryBlue
@@ -38,7 +37,7 @@ class OfficialGenreViewController: UIViewController {
         collectionView.backgroundColor = MovieColor.palette.white
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "OfficialGenreCell", bundle: nil), forCellWithReuseIdentifier: "OfficialGenreCell")
+        collectionView.register(UINib(nibName: "MovieListCell", bundle: nil), forCellWithReuseIdentifier: "MovieListCell")
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
@@ -46,24 +45,27 @@ class OfficialGenreViewController: UIViewController {
             layout.scrollDirection = .vertical
         }
     }
+
 }
 
-extension OfficialGenreViewController: OfficialGenreViewInterface {    
+extension MovieListViewController: MovieListViewInterface {
+    
 }
 
-extension OfficialGenreViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension MovieListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OfficialGenreCell", for: indexPath)  as! OfficialGenreCell
-        cell.genreLabel.text = "Action"
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieListCell", for: indexPath)  as! MovieListCell
+        cell.setupView(image: "movie", title: "ADMIRAL")
+        cell.imageMovie.backgroundColor = .gray
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.navigate(to: .movieList(genreID: 1))
+        print("Selected")
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -75,6 +77,6 @@ extension OfficialGenreViewController: UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: CGFloat((collectionView.frame.size.width / 2) - 20), height: CGFloat(92.0))
+        return CGSize(width: CGFloat((collectionView.frame.size.width / 2) - 20), height: CGFloat(240.0))
     }
 }
