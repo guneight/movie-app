@@ -18,8 +18,22 @@ class MovieDetailViewController: UIViewController {
         _setupTableView()
     }
 
-
-    func _setupTableView() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        title = "MOVIE 1"
+        if let navigationController = navigationController {
+            navigationController.setNavigationBarHidden(false, animated: true)
+            navigationController.view.backgroundColor = MovieColor.palette.primaryBlue
+            navigationController.setNavigationBarColor(.blue)
+            navigationController.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: MovieColor.palette.white]
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    private func _setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -43,7 +57,10 @@ extension MovieDetailViewController: UITableViewDataSource, UITableViewDelegate 
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieDetailCell", for: indexPath) as! MovieDetailCell
         cell.setupView(data: MovieDetailModel.init(adult: true, backdropPath: "sasf", belongsToCollection: "dasda", budget: 20, genres: [Genre.init(id: 1, name: "Action")], homepage: "sasa", id:12, imdbID: "SDasd", originalLanguage: "en", originalTitle: "Fast Farious", overview: "sdbvasdbvhasbdabasbahdbasmncb abmnc amnc amcacsba asc asfas fasf askas ", popularity: 3, posterPath: "sadadasdasdas", productionCompanies: [], productionCountries: [], releaseDate: "10-23-2019", revenue: 12, runtime: 190, spokenLanguages: [], status: "", tagline: "sk faskda s asda ldasdadaklasd asdas", title: "", video: false, voteAverage: 7.9, voteCount: 8990))
         cell.didButtonTapped = {
-            print("Tapped")
+            self.presenter.navigation(to: .review(movieID: 1))
+        }
+        cell.didReviewButtonTapped = {
+            self.presenter.navigation(to: .review(movieID: 1))
         }
         return cell
     }

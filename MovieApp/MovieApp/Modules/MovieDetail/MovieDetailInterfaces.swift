@@ -23,7 +23,7 @@ protocol MovieDetailViewInterface: ViewInterface {
 }
 
 protocol MovieDetailPresenterInterface: PresenterInterface {
-    
+    func navigation(to option: MovieDetailNavigationOption)
 }
 
 protocol MovieDetailInteractorInterface: InteractorInterface {

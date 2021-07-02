@@ -26,5 +26,7 @@ final class MovieDetailPresenter {
 }
 
 extension MovieDetailPresenter: MovieDetailPresenterInterface {
-    
+    func navigation(to option: MovieDetailNavigationOption) {
+        wireframe.navigation(to: option)
+    }
 }

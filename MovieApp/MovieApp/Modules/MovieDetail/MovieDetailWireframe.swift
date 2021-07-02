@@ -17,7 +17,7 @@ final class MovieDetailWireframe: BaseWireframe {
     }
     
     private func _openMovieReview(movieID: Int) {
-        
+        navigationController?.pushWireframe(MovieReviewWireframe.init(movieID: movieID))
     }
     
     private func _playTrailer(movieID: Int) {
