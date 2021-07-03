@@ -22,3 +22,10 @@ class NetworkManager: NSObject {
     }
 }
 
+extension HTTPHeaders {
+    static func `default`() -> HTTPHeaders {
+        return [
+            "Authorization": ""
+        ]    
+    }
+}

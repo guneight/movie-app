@@ -6,8 +6,7 @@
 //
 
 import Foundation
-
-import Foundation
+import Alamofire
 
 enum MovieDetailNavigationOption {
     case review(movieID: Int)
@@ -19,13 +18,15 @@ protocol MovieDetailWireframeInterface {
 }
 
 protocol MovieDetailViewInterface: ViewInterface {
-    
+    func reloadData()
 }
 
 protocol MovieDetailPresenterInterface: PresenterInterface {
+    var movieDetail: MovieDetailModel? { get set }
     func navigation(to option: MovieDetailNavigationOption)
 }
 
 protocol MovieDetailInteractorInterface: InteractorInterface {
-    
+    @discardableResult
+    func getMovieDetail(bodyReq: MovieDetailBodyRequest, completion: @escaping MovieResponse<MovieDetailModel>) -> DataRequest
 }

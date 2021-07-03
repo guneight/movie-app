@@ -12,7 +12,7 @@ struct MovieDetailModel: Codable {
     let backdropPath: String
     let belongsToCollection: String
     let budget: Int
-    let genres: [Genre]
+    let genres: [Genres]
     let homepage: String
     let id: Int
     let imdbID, originalLanguage, originalTitle, overview: String
@@ -50,7 +50,7 @@ struct MovieDetailModel: Codable {
 }
 
 // MARK: - Genre
-struct Genre: Codable {
+struct Genres: Codable {
     let id: Int
     let name: String
 }
@@ -87,4 +87,10 @@ struct SpokenLanguage: Codable {
         case iso639_1 = "iso_639_1"
         case name
     }
+}
+
+// MARK: - MovieDetailBodyRequest
+struct MovieDetailBodyRequest: Encodable {
+    let api_key: String
+    let language: String?
 }

@@ -49,23 +49,28 @@ class MovieListViewController: UIViewController {
 }
 
 extension MovieListViewController: MovieListViewInterface {
-    
+    func relaodData() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 extension MovieListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return presenter.movieList?.totalResults ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let movie = presenter.movieList?.results else { return UICollectionViewCell() }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieListCell", for: indexPath)  as! MovieListCell
-        cell.setupView(image: "movie", title: "ADMIRAL")
+        cell.setupView(image: movie[indexPath.row].posterPath, title: movie[indexPath.row].title)
         cell.imageMovie.backgroundColor = .gray
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.navigate(to: .movieDetail(movieID: 1))
+        presenter.navigate(to: .movieDetail(movieID: presenter.movieList?.results[indexPath.row].id ?? 0))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Alamofire
 
 enum OfficialGenreNavigationOption {
-    case movieList(genreID: Int)
+    case movieList(genre: String)
 }
 
 protocol OfficialGenreWireframeInterface {
@@ -16,13 +17,15 @@ protocol OfficialGenreWireframeInterface {
 }
 
 protocol OfficialGenreViewInterface: ViewInterface {
-    
+    func reloadData()
 }
 
 protocol OfficialGenrePresenterInterface: PresenterInterface {
+    var genre: OfficialGenreModel? { get set }
     func navigate(to option: OfficialGenreNavigationOption)
 }
 
 protocol OfficialGenreInteractorInterface: InteractorInterface {
-    
+    @discardableResult
+    func getOfficialGenre(bodyReq: OfficialGenreBodyRequest, completion: @escaping MovieResponse<OfficialGenreModel>) -> DataRequest
 }

@@ -49,3 +49,10 @@ struct AuthorDetails: Codable {
         case rating
     }
 }
+
+// MARK: - MovieReviewsBodyRequest
+struct MovieReviewsBodyRequest: Encodable {
+    let api_key: String
+    let language: String?
+    let page: Int?
+}

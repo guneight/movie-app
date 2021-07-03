@@ -45,6 +45,11 @@ class MovieDetailViewController: UIViewController {
 }
 
 extension MovieDetailViewController: MovieDetailViewInterface {
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
     
 }
 
@@ -54,13 +59,14 @@ extension MovieDetailViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let movieDetail = presenter.movieDetail else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieDetailCell", for: indexPath) as! MovieDetailCell
-        cell.setupView(data: MovieDetailModel.init(adult: true, backdropPath: "sasf", belongsToCollection: "dasda", budget: 20, genres: [Genre.init(id: 1, name: "Action")], homepage: "sasa", id:12, imdbID: "SDasd", originalLanguage: "en", originalTitle: "Fast Farious", overview: "sdbvasdbvhasbdabasbahdbasmncb abmnc amnc amcacsba asc asfas fasf askas ", popularity: 3, posterPath: "sadadasdasdas", productionCompanies: [], productionCountries: [], releaseDate: "10-23-2019", revenue: 12, runtime: 190, spokenLanguages: [], status: "", tagline: "sk faskda s asda ldasdadaklasd asdas", title: "", video: false, voteAverage: 7.9, voteCount: 8990))
+        cell.setupView(data: movieDetail)
         cell.didButtonTapped = {
-            self.presenter.navigation(to: .review(movieID: 1))
+            self.presenter.navigation(to: .review(movieID: movieDetail.id))
         }
         cell.didReviewButtonTapped = {
-            self.presenter.navigation(to: .review(movieID: 1))
+            self.presenter.navigation(to: .review(movieID: movieDetail.id))
         }
         return cell
     }

@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct MovieList: Codable {
+struct MovieListModel: Codable {
     let page: Int
     let results: [ResultMovie]
     let totalResults, totalPages: Int
@@ -55,4 +55,12 @@ struct ResultMovie: Codable {
 
 enum OriginalLanguage: String, Codable {
     case en = "en"
+}
+
+// MARK: - GenreBodyRequest
+struct MovieListBodyRequest: Encodable {
+    let api_key: String?
+    let language: String?
+    let pages: Int?
+    let with_genre: String?
 }

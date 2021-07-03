@@ -16,7 +16,9 @@ class OfficialGenreViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        presenter.viewDidLoad()
         _setupCollectionView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,22 +50,33 @@ class OfficialGenreViewController: UIViewController {
     }
 }
 
-extension OfficialGenreViewController: OfficialGenreViewInterface {    
+extension OfficialGenreViewController: OfficialGenreViewInterface {
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+    
 }
 
 extension OfficialGenreViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return presenter.genre?.genres.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OfficialGenreCell", for: indexPath)  as! OfficialGenreCell
-        cell.genreLabel.text = "Action"
+        if presenter.genre?.genres.count ?? 0 > 0, let name = presenter.genre?.genres[indexPath.row].name {
+            cell.genreLabel.text = name
+        } else {
+            cell.genreLabel.text = "Movie is empty"
+        }
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.navigate(to: .movieList(genreID: 1))
+        presenter.navigate(to: .movieList(genre: presenter.genre?.genres[indexPath.row].name ?? ""))
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

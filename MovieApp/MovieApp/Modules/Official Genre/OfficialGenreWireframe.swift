@@ -17,16 +17,16 @@ final class OfficialGenreWireframe: BaseWireframe {
         moduleViewController.presenter = presenter
     }
     
-    private func openMovieList(genreID: Int) {
-        navigationController?.pushWireframe(MovieListWireframe(genreID: genreID))
+    private func openMovieList(genre: String) {
+        navigationController?.pushWireframe(MovieListWireframe(genre: genre))
     }
 }
 
 extension OfficialGenreWireframe: OfficialGenreWireframeInterface {
     func navigation(to option: OfficialGenreNavigationOption) {
         switch option {
-        case .movieList(genreID: let genreId):
-            return openMovieList(genreID: genreId)
+        case .movieList(genre: let genre):
+            return openMovieList(genre: genre)
         }
     }
 }

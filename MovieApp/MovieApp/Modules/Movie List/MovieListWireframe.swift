@@ -9,11 +9,11 @@ import Foundation
 
 final class MovieListWireframe: BaseWireframe {
     
-    init(genreID: Int) {
+    init(genre: String) {
         let moduleViewController = MovieListViewController()
         super.init(viewController: moduleViewController)
         let interactor = MovieListInteractor()
-        let presenter = MovieListPresenter(genreID: genreID, view: moduleViewController, interactor: interactor, wireframe: self)
+        let presenter = MovieListPresenter(genre: genre, view: moduleViewController, interactor: interactor, wireframe: self)
         moduleViewController.presenter = presenter
     }
     

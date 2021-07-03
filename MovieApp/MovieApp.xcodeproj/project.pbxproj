@@ -54,6 +54,8 @@
 		8659DCD7268F6C54008CB3F5 /* MovieReviewWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659DCD6268F6C54008CB3F5 /* MovieReviewWireframe.swift */; };
 		8659DCDB268F6C82008CB3F5 /* MovieReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659DCD9268F6C82008CB3F5 /* MovieReviewViewController.swift */; };
 		8659DCDC268F6C82008CB3F5 /* MovieReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8659DCDA268F6C82008CB3F5 /* MovieReviewViewController.xib */; };
+		8659DCDF268F84A6008CB3F5 /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8659DCDE268F84A6008CB3F5 /* Encodable+Extension.swift */; };
+		86B450CB269075AA00F28827 /* MovieReviewsRemoteRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B450CA269075AA00F28827 /* MovieReviewsRemoteRepo.swift */; };
 		86C66893268DD9F500B2DEF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C66892268DD9F500B2DEF5 /* AppDelegate.swift */; };
 		86C66895268DD9F500B2DEF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C66894268DD9F500B2DEF5 /* SceneDelegate.swift */; };
 		86C66897268DD9F500B2DEF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C66896268DD9F500B2DEF5 /* ViewController.swift */; };
@@ -119,6 +121,8 @@
 		8659DCD6268F6C54008CB3F5 /* MovieReviewWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewWireframe.swift; sourceTree = "<group>"; };
 		8659DCD9268F6C82008CB3F5 /* MovieReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewViewController.swift; sourceTree = "<group>"; };
 		8659DCDA268F6C82008CB3F5 /* MovieReviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieReviewViewController.xib; sourceTree = "<group>"; };
+		8659DCDE268F84A6008CB3F5 /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		86B450CA269075AA00F28827 /* MovieReviewsRemoteRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieReviewsRemoteRepo.swift; sourceTree = "<group>"; };
 		86C6688F268DD9F500B2DEF5 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C66892268DD9F500B2DEF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86C66894268DD9F500B2DEF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 		8659DCC3268F66C4008CB3F5 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				86B450CA269075AA00F28827 /* MovieReviewsRemoteRepo.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 			children = (
 				860B7808268EB54900C79A4C /* ViewController+Extenstion.swift */,
 				860B780B268EB56500C79A4C /* UIStoryboard+Extension.swift */,
+				8659DCDE268F84A6008CB3F5 /* Encodable+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -558,6 +564,7 @@
 				8659DCB8268F5633008CB3F5 /* MovieDetailViewController.swift in Sources */,
 				86C66897268DD9F500B2DEF5 /* ViewController.swift in Sources */,
 				860B7806268EB4A100C79A4C /* PresenterInterface.swift in Sources */,
+				86B450CB269075AA00F28827 /* MovieReviewsRemoteRepo.swift in Sources */,
 				86C66893268DD9F500B2DEF5 /* AppDelegate.swift in Sources */,
 				860B780C268EB56500C79A4C /* UIStoryboard+Extension.swift in Sources */,
 				860B7815268EB5F300C79A4C /* APIService.swift in Sources */,
@@ -594,6 +601,7 @@
 				8659DC92268F3182008CB3F5 /* NetworkUtils.swift in Sources */,
 				8659DCDB268F6C82008CB3F5 /* MovieReviewViewController.swift in Sources */,
 				8659DCD7268F6C54008CB3F5 /* MovieReviewWireframe.swift in Sources */,
+				8659DCDF268F84A6008CB3F5 /* Encodable+Extension.swift in Sources */,
 				86C66900268E27CC00B2DEF5 /* InteractorInterface.swift in Sources */,
 				8659DCBC268F5659008CB3F5 /* MovieDetailInterfaces.swift in Sources */,
 				8659DC89268F2CA9008CB3F5 /* MovieListModel.swift in Sources */,

@@ -48,18 +48,23 @@ class MovieReviewViewController: UIViewController {
 
 
 extension MovieReviewViewController: MovieReviewViewInterface {
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
     
 }
 
 extension MovieReviewViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
+        presenter.movieReview?.totalResults ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let movieReview = presenter.movieReview?.results else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieReviewCell", for: indexPath) as! MovieReviewCell
-        cell.setupView(data: Results.init(author: "Gun Eight", authorDetails: AuthorDetails.init(name: "Gun", username: "Gun Eight", avatarPath: "ffghvvgq", rating: 10), content: "vghvhgchgc cghcgfc sbfjasbdas asbcjsabas lknbsad asbasdas asbasdbabda sbdudsuiyuiwyebwq ", createdAt: "10-10-2020", id: "10", updatedAt: "10-11-2020", url: "sncasncaskcask"))
-      
+        cell.setupView(data: movieReview[indexPath.row])
         return cell
     }
 
